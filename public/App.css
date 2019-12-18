@@ -1,0 +1,407 @@
+
+@media (min-width: 576px){
+    .block {
+        padding: 120px 1rem;
+    }
+}
+.block {
+    position: relative;
+    padding: 60px 30px;
+    color: inherit;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.zombies-hero.no-webp {
+    background-image: url(./index_bg.png);
+}
+.zombies-hero {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-size: 100% auto;
+}
+.pt-5 {
+    padding-top: 3rem!important;
+}
+.pb-0 {
+    padding-bottom: 0!important;
+}
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+.zombies-hero .container {
+    padding-top: 35%;
+    text-align: center;
+    max-width: 1260px;
+    overflow: auto;
+    display: -webkit-box;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+}
+.zombies-hero .menu {
+    background-color: rgba(0,0,0,.5);
+    padding-top: 20px; 
+    height: min-content;
+    display: flex;
+    width: 100%;
+}
+.zombies-hero .menu ul {
+    width: 100%;
+    display: flex;
+}
+.zombies-hero a {
+   color: #fff;
+}
+.zombies-hero a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.zombies-hero .menu li {
+    width: 33%;
+}
+
+.start-course-btn:active {
+    background: url(./Btn_Register_Normal.png);
+    background-size: 100% 100%;
+}
+.start-course-btn:hover {
+    background: url(./Btn_Register_Over.png);
+    background-size: 100% 100%;
+}
+.start-course-btn {
+    cursor: pointer;
+    background: url(./Btn_Register_Normal.png);
+    background-position: top;
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: soleil,sans-serif;
+    font-size: 20px;
+    text-shadow: 0 2px 7px #000;
+    color: #fff;
+    padding: 40px 65px;
+}
+
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button;
+}
+#root{
+  background: url(./walls.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+.zombie-container {
+    padding-top: 0px;
+}
+.zombie-container .container{
+    text-align: center;
+    max-width: 1260px;
+}
+
+.zombie-container .area{
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px; 
+    height: min-content;
+}
+
+.start-admin-btn:hover {
+  -webkit-transition: all .6s ease 0s;
+  transition: all .6s ease 0s;
+  -webkit-filter: brightness(130%);
+  filter: brightness(130%);
+}
+.start-admin-btn {
+    cursor: pointer;
+    background: url(./learn_more_btn.png);
+    background-position: 50% 20px;
+    background-size: 90%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    font-family: soleil,sans-serif;
+    font-size: 20px;
+    text-shadow: 0 2px 7px #000;
+    color: #fff;
+    padding: 40px 65px;
+}
+
+.home-card{
+    background-image: url(./homecard@2x.png);
+    background-repeat: no-repeat;
+}
+.game-card {
+    height: 42vh;
+    width: 29vh;
+    margin: -1rem;
+    background-size: 100%;
+    position: relative;
+    transform: scale(.8);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.cards{
+    justify-content: space-around!important;
+    flex-wrap: wrap!important;
+    display: flex!important;
+}
+.cards a{
+    display: flex!important;
+    color: unset;
+}
+.game-card .zombie-parts{
+    margin-left: 0vh;
+    margin-top: 38vh;
+    transform: scale(1.5);
+}
+.zombie-card {
+    position: absolute;
+    left: 50%;
+    top: 51vh;
+    font-size: 40px;
+    width: 48vh;
+    margin-left: -8vh;
+    text-align: center;
+    transform: scale(1);
+    background-color: rgba(0,0,0,.2)!important;
+}
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+.hide-overflow-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.bg-dark {
+    background-color: rgba(0,0,0,.7)!important;
+}
+.game-card[active='1'] {
+    transform: rotate(5deg);
+}
+.game-card[active='0'] {
+    transform: rotate(0deg);
+    transform: scale(.8);
+}
+.game-card:hover {
+    transform: rotate(5deg);
+}
+.zombie-detail{
+    padding-top: 1.5rem !important;
+    position: relative;
+    width: 70%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    flex-basis: 0px;
+    flex-grow: 1;
+    max-width: 100%;
+    margin-top: 20vh;
+}
+.zombie-detail dl{
+    display: inline-block;
+    background-color: rgba(0,0,0,.3)!important;
+    padding: 30px 0px;
+}
+.zombie-detail dt,dd{
+    float:left;
+    padding: 10px 0px;
+}
+.zombie-detail dt{
+    width: 30%;
+}
+.zombie-detail dd{
+    width: 70%;
+}
+.zombie-detail dl>:first-child,.zombie-detail dl>:last-child{
+
+    width: 100%;
+}
+.zombie-detail dl>:last-child{
+    margin-top: 30px;
+}
+
+.attack-btn:hover {
+    -webkit-transition: all .6s ease 0s;
+    transition: all .6s ease 0s;
+    -webkit-filter: brightness(130%);
+    filter: brightness(130%);
+}
+.attack-btn {
+    cursor: pointer;
+    background: url(./start_btn.png);
+    background-position: top;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: soleil,sans-serif;
+    font-size: 20px;
+    text-shadow: 0 2px 7px #000;
+    color: #fff;
+    height: 77px;
+    width: 528px;
+    margin-top: 50px;
+}
+.attack-btn span{
+    margin-top: 10px;
+    display: block;
+
+}
+.zombieInput{
+    margin: 30px 0px;
+    width: 100%;
+}
+.zombieInput input{
+    width: 300px;
+    line-height: 30px;
+    font-size: 28px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #999;
+}
+button a,button a:hover{
+    color: unset!important;
+    text-decoration: none!important;
+    background: none;
+}
+.flex{
+    display: flex!important;
+}
+
+.zombie-attack .zombie-preview {
+    transform: scale(0.5);
+}
+.zombie-attack .zombie-detail{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+.target-card{
+    transform: none;
+    background-image: url(./tester-bg@2x.png);
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.target-card:hover{
+    transform: none;
+}
+.modal{
+    position: absolute;
+    background: rgba(0,0,0,.8);
+    top: 25px;
+    left: 10%;
+    right: 10%;
+    padding: 15px;
+    z-index: 999;
+}
+.battelArea{
+    display: flex;
+    min-height: 300px;
+}
+.battelArea .targetZombie,.battelArea .myZombie{
+    width: 33%;
+    margin-top: -200px;
+    transform: scale(0.5);
+}
+.battelArea .myZombie{
+    transform: rotateY(180deg) scale(0.5);
+}
+.battelArea .vs{
+    width: 33%;
+    font-size: 100px;
+    color: #fff;
+    font-weight: bolder;
+    line-height: 300px;
+}
+.pay-btn:hover {
+    -webkit-transition: all .6s ease 0s;
+    transition: all .6s ease 0s;
+    -webkit-filter: brightness(130%);
+    filter: brightness(130%);
+}
+.pay-btn {
+    cursor: pointer;
+    background: url(./learn_more_btn.png);
+    background-position: top;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: soleil,sans-serif;
+    font-size: 20px;
+    text-shadow: 0 2px 7px #000;
+    color: #fff;
+    height: 66px;
+    width: 210px;
+    margin-top: 50px;
+}
+.pay-btn-last {
+    margin-top: 0px;
+}
+.pay-btn span{
+    margin-top: 10px;
+    display: block;
+
+}
+.zombie-simulator .zombie-parts{
+    width: 50%;
+    margin-top: 16vh;
+}
+.zombie-simulator .zombie-preview{
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center top;
+}
+.transactionHash{
+    display: none;
+}
+.transactionHash[display='1']{
+    display: block;
+}
+.buyArea[display='0'],.createArea[display='0']{
+    display: none;
+}
+.buyArea[display='1'],.createArea[display='1']{
+    display: block;
+}
+.contract-admin dl{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contract-admin dt{
+    width: 30%;
+    padding: 10px 0px;
+}
+.contract-admin dd{
+    width: 70%;
+    font-family: auto;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.contract-admin .pay-btn{
+    height: 40px;
+    width: 105px;
+    font-size: 14px;
+    background-position: 0px 8px;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+}
+.contract-admin .pay-btn span{
+    margin-top: 15px;
+}
+.lowcase{
+    text-transform: lowercase;
+}

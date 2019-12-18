@@ -7,7 +7,7 @@
   height: 84vh;
   width: 47vh;
   background-size: cover;
-  background-image: url(/tester-bg@2x.png)
+  background-image: url(./tester-bg@2x.png)
 }
 
 .zombie-char {
@@ -21,7 +21,7 @@
 }
 
 .zombie-loading {
-  background: url(/zombierun.png) 0;
+  background: url(./zombierun.png) 0;
   background-size: cover;
   height: 287px;
   width: 192px;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ZombiePreview from "./ZombiePreview"
-import './zombiePreview.css'
+import '../public/ZombiePreview.css'
 import MyWeb3 from './MyWeb3'
 import moment from "moment"
 import {
@@ -148,7 +148,7 @@ class Zombiedetail extends Component {
                         return(
                         <button className="attack-btn">
                             <span>
-                                <Link to={{pathname:"/ZombieAttack",search:"?id="+that.state.id}} >发起挑战</Link>
+                                <Link to={{pathname:"./ZombieAttack",search:"?id="+that.state.id}} >发起挑战</Link>
                             </span>
                         </button>)
                         }

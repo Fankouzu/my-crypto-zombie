@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ZombieCard from "./ZombieCard";
-import './zombiePreview.css';
+import '../public/ZombiePreview.css';
 import MyWeb3 from './MyWeb3'
 import {
     BrowserRouter as 
@@ -83,7 +83,7 @@ class MyZombie extends Component {
                         var name = item.name
                         var level = item.level
                         return(
-                            <Link to={{pathname:"/ZombieDetail",search:"?id="+item.zombieId}} key={index}>
+                            <Link to={{pathname:"./ZombieDetail",search:"?id="+item.zombieId}} key={index}>
                                 <ZombieCard zombie={item} name={name} level={level} key={index}></ZombieCard>
                             </Link>
                         )

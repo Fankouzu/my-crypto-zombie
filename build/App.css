@@ -13,7 +13,7 @@
     background-repeat: no-repeat;
 }
 .zombies-hero.no-webp {
-    background-image: url(/index_bg.png);
+    background-image: url(./index_bg.png);
 }
 .zombies-hero {
     background-repeat: no-repeat;
@@ -70,16 +70,16 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 .start-course-btn:active {
-    background: url(/Btn_Register_Normal.png);
+    background: url(./Btn_Register_Normal.png);
     background-size: 100% 100%;
 }
 .start-course-btn:hover {
-    background: url(/Btn_Register_Over.png);
+    background: url(./Btn_Register_Over.png);
     background-size: 100% 100%;
 }
 .start-course-btn {
     cursor: pointer;
-    background: url(/Btn_Register_Normal.png);
+    background: url(./Btn_Register_Normal.png);
     background-position: top;
     background-size: 100% 100%;
     background-color: transparent;
@@ -96,7 +96,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     -webkit-appearance: button;
 }
 #root{
-  background: url(/walls.jpg);
+  background: url(./walls.jpg);
   background-size: cover;
   background-position: 50%;
 }
@@ -122,7 +122,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 .start-admin-btn {
     cursor: pointer;
-    background: url(/learn_more_btn.png);
+    background: url(./learn_more_btn.png);
     background-position: 50% 20px;
     background-size: 90%;
     background-color: transparent;
@@ -137,7 +137,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 .home-card{
-    background-image: url(/homecard@2x.png);
+    background-image: url(./homecard@2x.png);
     background-repeat: no-repeat;
 }
 .game-card {
@@ -239,7 +239,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 .attack-btn {
     cursor: pointer;
-    background: url(/start_btn.png);
+    background: url(./start_btn.png);
     background-position: top;
     background-size: 100%;
     background-color: transparent;
@@ -290,7 +290,7 @@ button a,button a:hover{
 }
 .target-card{
     transform: none;
-    background-image: url(/tester-bg@2x.png);
+    background-image: url(./tester-bg@2x.png);
     background-size: 85%;
     background-repeat: no-repeat;
     background-position: center;
@@ -334,7 +334,7 @@ button a,button a:hover{
 }
 .pay-btn {
     cursor: pointer;
-    background: url(/learn_more_btn.png);
+    background: url(./learn_more_btn.png);
     background-position: top;
     background-size: 100%;
     background-color: transparent;
