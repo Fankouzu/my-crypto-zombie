@@ -1,5 +1,5 @@
 import Web3 from "web3";
-import abi from './contracts/ZombieCore.json'
+import abi from './ZombieCore.json'
 
 const MyWeb3 ={
     zombieCount() {
