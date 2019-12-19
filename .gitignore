@@ -15,7 +15,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-
+webpack.config.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
