@@ -9,7 +9,8 @@ import ZombieAttack from "./ZombieAttack";
 import ContractAdmin from "./ContractAdmin";
 import MyWeb3 from './MyWeb3'
 import {
-    BrowserRouter as Router,
+    BrowserRouter as 
+    Router,
     Route,
     Link
   } from "react-router-dom"
@@ -17,7 +18,9 @@ import {
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { AdminArea:()=>{return(<Fragment></Fragment>)} }
+        const _pathname = window.location.pathname.split('/')
+        const pathname = '/'+_pathname[_pathname.length-2]
+        this.state = { AdminArea:()=>{return(<Fragment></Fragment>)},pathname:pathname }
     }
     
     componentDidMount(){
@@ -51,7 +54,7 @@ class App extends Component {
         let AdminArea = this.state.AdminArea
         return (
             <Fragment>
-                <Router>
+                <Router basename={this.state.pathname}>
                     <section className="zombies-hero no-webp block app-block-intro pt-5 pb-0">
                         <div className="container">
                             <div className="menu">
@@ -84,7 +87,7 @@ class App extends Component {
                     <section className="zombie-container block bg-walls no-webp">
                         <div className="container">
                             <div className="area">
-                                <Route exact path="/" component={ZombieArmy}></Route>
+                                <Route path="/" component={ZombieArmy}></Route>
                                 <Route path="/MyZombie" component={MyZombie}></Route>
                                 <Route path="/ZombieMarket" component={ZombieMarket}></Route>
                                 <Route path="/ZombieSimulator" component={ZombieSimulator}></Route>
