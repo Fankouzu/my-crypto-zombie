@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ec4ff25bd5fe650a6552d5a33890c27a",
+    "revision": "2708edf3710842feb37b1be78ae7fdaa",
     "url": "/my-crypto-zombie/index.html"
   },
   {
-    "revision": "ea7bda2ec04511618970",
-    "url": "/my-crypto-zombie/static/css/main.94bf3eb0.chunk.css"
+    "revision": "847c5c8d723a81710322",
+    "url": "/my-crypto-zombie/static/css/main.8406f7ba.chunk.css"
   },
   {
-    "revision": "61825daa23368893b0d0",
-    "url": "/my-crypto-zombie/static/js/2.4231b2e1.chunk.js"
+    "revision": "cbdf140817544e93f004",
+    "url": "/my-crypto-zombie/static/js/2.a7a8d271.chunk.js"
   },
   {
     "revision": "6c19783ced6bae75444858dab9dff6e1",
-    "url": "/my-crypto-zombie/static/js/2.4231b2e1.chunk.js.LICENSE"
+    "url": "/my-crypto-zombie/static/js/2.a7a8d271.chunk.js.LICENSE"
   },
   {
-    "revision": "ea7bda2ec04511618970",
-    "url": "/my-crypto-zombie/static/js/main.fde6ce42.chunk.js"
+    "revision": "847c5c8d723a81710322",
+    "url": "/my-crypto-zombie/static/js/main.70f1d365.chunk.js"
   },
   {
     "revision": "817c9e11ebfc9dd79683",

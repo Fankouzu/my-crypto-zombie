@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/my-crypto-zombie/static/css/main.94bf3eb0.chunk.css",
-    "main.js": "/my-crypto-zombie/static/js/main.fde6ce42.chunk.js",
-    "main.js.map": "/my-crypto-zombie/static/js/main.fde6ce42.chunk.js.map",
+    "main.css": "/my-crypto-zombie/static/css/main.8406f7ba.chunk.css",
+    "main.js": "/my-crypto-zombie/static/js/main.70f1d365.chunk.js",
+    "main.js.map": "/my-crypto-zombie/static/js/main.70f1d365.chunk.js.map",
     "runtime-main.js": "/my-crypto-zombie/static/js/runtime-main.3c1a62d7.js",
     "runtime-main.js.map": "/my-crypto-zombie/static/js/runtime-main.3c1a62d7.js.map",
-    "static/js/2.4231b2e1.chunk.js": "/my-crypto-zombie/static/js/2.4231b2e1.chunk.js",
-    "static/js/2.4231b2e1.chunk.js.map": "/my-crypto-zombie/static/js/2.4231b2e1.chunk.js.map",
+    "static/js/2.a7a8d271.chunk.js": "/my-crypto-zombie/static/js/2.a7a8d271.chunk.js",
+    "static/js/2.a7a8d271.chunk.js.map": "/my-crypto-zombie/static/js/2.a7a8d271.chunk.js.map",
     "index.html": "/my-crypto-zombie/index.html",
-    "precache-manifest.422e28ae2f4729e57a0dc9d8ce510909.js": "/my-crypto-zombie/precache-manifest.422e28ae2f4729e57a0dc9d8ce510909.js",
+    "precache-manifest.e5439935fb2b9586cd9b8e2b2c64d334.js": "/my-crypto-zombie/precache-manifest.e5439935fb2b9586cd9b8e2b2c64d334.js",
     "service-worker.js": "/my-crypto-zombie/service-worker.js",
-    "static/css/main.94bf3eb0.chunk.css.map": "/my-crypto-zombie/static/css/main.94bf3eb0.chunk.css.map",
-    "static/js/2.4231b2e1.chunk.js.LICENSE": "/my-crypto-zombie/static/js/2.4231b2e1.chunk.js.LICENSE",
+    "static/css/main.8406f7ba.chunk.css.map": "/my-crypto-zombie/static/css/main.8406f7ba.chunk.css.map",
+    "static/js/2.a7a8d271.chunk.js.LICENSE": "/my-crypto-zombie/static/js/2.a7a8d271.chunk.js.LICENSE",
     "static/media/App.css": "/my-crypto-zombie/static/media/walls.b102b800.jpg",
     "static/media/ZombiePreview.css": "/my-crypto-zombie/static/media/zombierun.08087132.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3c1a62d7.js",
-    "static/js/2.4231b2e1.chunk.js",
-    "static/css/main.94bf3eb0.chunk.css",
-    "static/js/main.fde6ce42.chunk.js"
+    "static/js/2.a7a8d271.chunk.js",
+    "static/css/main.8406f7ba.chunk.css",
+    "static/js/main.70f1d365.chunk.js"
   ]
 }
