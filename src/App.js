@@ -34,7 +34,18 @@ class App extends Component {
                         })
                     }
                 })
-                
+            })
+            ethereum.on('accountsChanged', function (accounts) {
+                console.log("accountsChanged:"+accounts)
+                window.location.reload()
+            })
+            ethereum.on('chainChanged', function (chainId) {
+                console.log("chainChanged:"+chainId)
+                window.location.reload()
+            })
+            ethereum.on('networkChanged', function (networkVersion) {
+                console.log("networkChanged:"+networkVersion)
+                window.location.reload()
             })
         }else {
             alert('You have to install MetaMask !')

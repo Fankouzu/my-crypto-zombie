@@ -17,7 +17,6 @@ const MyWeb3 ={
             let currentChainId = window.ethereum.networkVersion
             let ethereum = window.ethereum
             ethereum.autoRefreshOnNetworkChange = false
-            let that = this
             ethereum.enable().then(function (accounts) {
                 let provider = window['ethereum'] || window.web3.currentProvider
                 window.web3 = new Web3(provider)
@@ -33,21 +32,6 @@ const MyWeb3 ={
                 }
             }).catch(function (error) {
                 console.log(error)
-            })
-            ethereum.on('accountsChanged', function (accounts) {
-                console.log("accountsChanged:"+accounts)
-                window.location.reload()
-                that.init()
-            })
-            ethereum.on('chainChanged', function (chainId) {
-                console.log("chainChanged:"+chainId)
-                window.location.reload()
-                that.init()
-            })
-            ethereum.on('networkChanged', function (networkVersion) {
-                console.log("networkChanged:"+networkVersion)
-                window.location.reload()
-                that.init()
             })
         })
     },
