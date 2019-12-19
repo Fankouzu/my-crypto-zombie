@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/my-crypto-zombie/static/css/main.94bf3eb0.chunk.css",
-    "main.js": "/my-crypto-zombie/static/js/main.dfd123cb.chunk.js",
-    "main.js.map": "/my-crypto-zombie/static/js/main.dfd123cb.chunk.js.map",
+    "main.js": "/my-crypto-zombie/static/js/main.6b78a901.chunk.js",
+    "main.js.map": "/my-crypto-zombie/static/js/main.6b78a901.chunk.js.map",
     "runtime-main.js": "/my-crypto-zombie/static/js/runtime-main.3c1a62d7.js",
     "runtime-main.js.map": "/my-crypto-zombie/static/js/runtime-main.3c1a62d7.js.map",
     "static/js/2.4231b2e1.chunk.js": "/my-crypto-zombie/static/js/2.4231b2e1.chunk.js",
     "static/js/2.4231b2e1.chunk.js.map": "/my-crypto-zombie/static/js/2.4231b2e1.chunk.js.map",
     "index.html": "/my-crypto-zombie/index.html",
-    "precache-manifest.483f801c87667720a9fe48558b4baf22.js": "/my-crypto-zombie/precache-manifest.483f801c87667720a9fe48558b4baf22.js",
+    "precache-manifest.50dbe94752da7b7ef23cc957aeaf6f9f.js": "/my-crypto-zombie/precache-manifest.50dbe94752da7b7ef23cc957aeaf6f9f.js",
     "service-worker.js": "/my-crypto-zombie/service-worker.js",
     "static/css/main.94bf3eb0.chunk.css.map": "/my-crypto-zombie/static/css/main.94bf3eb0.chunk.css.map",
     "static/js/2.4231b2e1.chunk.js.LICENSE": "/my-crypto-zombie/static/js/2.4231b2e1.chunk.js.LICENSE",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.3c1a62d7.js",
     "static/js/2.4231b2e1.chunk.js",
     "static/css/main.94bf3eb0.chunk.css",
-    "static/js/main.dfd123cb.chunk.js"
+    "static/js/main.6b78a901.chunk.js"
   ]
 }
