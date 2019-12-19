@@ -87,7 +87,7 @@ class App extends Component {
                     <section className="zombie-container block bg-walls no-webp">
                         <div className="container">
                             <div className="area">
-                                <Route path="/" component={ZombieArmy}></Route>
+                                <Route exact path="/" component={ZombieArmy}></Route>
                                 <Route path="/MyZombie" component={MyZombie}></Route>
                                 <Route path="/ZombieMarket" component={ZombieMarket}></Route>
                                 <Route path="/ZombieSimulator" component={ZombieSimulator}></Route>
