@@ -15,13 +15,13 @@ https://fankouzu.github.io/my-crypto-zombie/ <br />
 
 
 ## 安装
-使用yarn安装更为有效
+使用yarn安装更为有效<br />
 `yarn install`
 ## 运行
 `yarn start`
 ## 使用说明
 - 这个项目是使用React开发的，运行之后在Chrome浏览器中打开地址 [http://localhost:3000](http://localhost:3000) 请确认你安装了[Metamask插件](https://metamask.io/) <br />
-- 项目中已经定在[这个文件](https://github.com/Fankouzu/my-crypto-zombie/blob/master/src/ContractAddress.json)中好了智能合约的地址,你也可以修改成你自己部署的智能合约合约地址
+- 项目中已经在[这个文件](https://github.com/Fankouzu/my-crypto-zombie/blob/master/src/ContractAddress.json)中设置好了智能合约的地址,你也可以修改成你自己部署的智能合约合约地址
 
 ```json
 {
