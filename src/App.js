@@ -52,7 +52,7 @@ class App extends Component {
                                 <ul>
                                     <li>
                                         <button className="start-course-btn">
-                                            <span><Link to="/?ZombieArmy">僵尸军团</Link></span>
+                                            <span><Link to="?ZombieArmy">僵尸军团</Link></span>
                                         </button>
                                     </li>
                                     <li>
