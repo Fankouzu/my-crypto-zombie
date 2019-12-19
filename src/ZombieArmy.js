@@ -42,7 +42,11 @@ class ZombieArmy extends Component {
             }
         })
     }
-    
+    componentWillUnmount() {
+        this.setState = (state, callback) => {
+            return
+        }
+    }
     render() { 
         if(this.state.zombies.length>0) {
             return ( 
