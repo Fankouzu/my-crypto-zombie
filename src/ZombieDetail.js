@@ -27,7 +27,7 @@ class Zombiedetail extends Component {
             zombieNewname:'',
             FeedArea: () =>{return(<div></div>)},
             LevelupArea: () =>{return(<div></div>)},
-            SellArea: () =>{return(<div></div>)},
+            SaleArea: () =>{return(<div></div>)},
             BuyArea: () =>{return(<div></div>)},
             onShop:false,
             shopInfo:{}
@@ -36,7 +36,7 @@ class Zombiedetail extends Component {
         this.changeName = this.changeName.bind(this)
         this.feed = this.feed.bind(this)
         this.levelUp = this.levelUp.bind(this)
-        this.sellZombie = this.sellZombie.bind(this)
+        this.saleZombie = this.saleZombie.bind(this)
         this.buyShopZombie = this.buyShopZombie.bind(this)
         this.setPrice = this.setPrice.bind(this)
     }
@@ -94,44 +94,64 @@ class Zombiedetail extends Component {
         })
     }
     changeName(){
+        let that = this
         if(window.defaultAccount !== undefined){
-            MyWeb3.changeName(this.state.id,this.state.zombieNewname).then(function(receipt){
-                console.log(receipt)
-                window.location.reload()
+            MyWeb3.changeName(this.state.id,this.state.zombieNewname)
+            .then(function(transactionHash){
+                that.setState({RenameArea : () =>{
+                    return(<div>{transactionHash}</div>)
+                    }
+                })
             })
         }
     }
     feed(){
+        let that = this
         if(window.defaultAccount !== undefined){
-            MyWeb3.feed(this.state.id).then(function(receipt){
-                console.log(receipt)
-                window.location.reload()
+            MyWeb3.feed(this.state.id)
+            .then(function(transactionHash){
+                that.setState({FeedArea : () =>{
+                    return(<div>{transactionHash}</div>)
+                    }
+                })
             })
         }
     }
     levelUp(){
+        let that = this
         if(window.defaultAccount !== undefined){
-            MyWeb3.levelUp(this.state.id).then(function(receipt){
-                console.log(receipt)
-                window.location.reload()
+            MyWeb3.levelUp(this.state.id)
+            .then(function(transactionHash){
+                that.setState({LevelupArea : () =>{
+                    return(<div>{transactionHash}</div>)
+                    }
+                })
             })
         }
     }
-    sellZombie(){
+    saleZombie(){
+        let that = this
         if(window.defaultAccount !== undefined 
             && this.state.myPrice*this.state.minPrice>0 
             && this.state.myPrice>=this.state.minPrice){
-            MyWeb3.saleMyZombie(this.state.id,this.state.myPrice).then(function(receipt){
-                console.log(receipt)
-                window.location.reload()
+            MyWeb3.saleMyZombie(this.state.id,this.state.myPrice)
+            .then(function(transactionHash){
+                that.setState({SaleArea : () =>{
+                    return(<div>{transactionHash}</div>)
+                    }
+                })
             })
         }
     }
     buyShopZombie(){
+        let that = this
         if(window.defaultAccount !== undefined){
-            MyWeb3.buyShopZombie(this.state.id,this.state.shopInfo.price).then(function(receipt){
-                console.log(receipt)
-                window.location.reload()
+            MyWeb3.buyShopZombie(this.state.id,this.state.shopInfo.price)
+            .then(function(transactionHash){
+                that.setState({BuyArea : () =>{
+                    return(<div>{transactionHash}</div>)
+                    }
+                })
             })
         }
     }
@@ -223,20 +243,20 @@ class Zombiedetail extends Component {
                         }
                     })
                     if(!that.state.onShop){
-                        that.setState({SellArea : () =>{
+                        that.setState({SaleArea : () =>{
                             return(
                                 <div>
                                     <div className='zombieInput'>
                                         <input 
                                             type="text" 
-                                            id='sellPrice' 
+                                            id='salePrice' 
                                             placeholder={that.state.minPrice} 
                                             value={that.state.myPrice}
                                             onChange={that.setPrice}>
                                         </input>
                                     </div>
                                     <div>
-                                        <button className="pay-btn pay-btn-last" onClick={that.sellZombie}>
+                                        <button className="pay-btn pay-btn-last" onClick={that.saleZombie}>
                                             <span>
                                                 卖了它
                                             </span>
@@ -261,7 +281,7 @@ class Zombiedetail extends Component {
         var RenameArea = this.state.RenameArea
         var FeedArea = this.state.FeedArea
         var LevelupArea = this.state.LevelupArea
-        var SellArea = this.state.SellArea
+        var SaleArea = this.state.SaleArea
         var BuyArea = this.state.BuyArea
         return ( 
             <div className="App">
@@ -298,7 +318,7 @@ class Zombiedetail extends Component {
                                 <RenameArea></RenameArea>
                                 <FeedArea></FeedArea>
                                 <LevelupArea></LevelupArea>
-                                <SellArea></SellArea>
+                                <SaleArea></SaleArea>
                                 <BuyArea></BuyArea>
                             </dd>
                         </dl>

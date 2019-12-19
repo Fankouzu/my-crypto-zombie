@@ -17,7 +17,16 @@ class NewZombie extends Component {
             myZombieId:'',
             active: {},
             buttonTxt:'',
-            modalDisplay:'none'
+            modalDisplay:'none',
+            transactionHash:'',
+            AttackBtn:()=>{
+                return( <button className="attack-btn">
+                            <span role="img" aria-label="zombie">
+                                选一只🧟‍♂️干它！
+                            </span>
+                        </button>
+                )
+            }
         }
         this.selectZombie = this.selectZombie.bind(this)
         this.zombieAttack = this.zombieAttack.bind(this)
@@ -68,20 +77,35 @@ class NewZombie extends Component {
         this.setState({
             active:_active,buttonTxt:'用'+this.state.myZombies[index].name,
             myZombie:this.state.myZombies[index],
-            myZombieId:this.state.myZombies[index].zombieId
+            myZombieId:this.state.myZombies[index].zombieId,
+            AttackBtn:()=>{
+                return( <button className="attack-btn" onClick={this.zombieAttack}>
+                            <span role="img">
+                                用{this.state.myZombies[index].name}干它！
+                            </span>
+                        </button>
+                )
+            }
         })
     }
 
     zombieAttack(){
+        let that = this
         if(this.state.myZombie !== undefined){
             this.setState({modalDisplay:''})
-            MyWeb3.attack(this.state.myZombieId,this.state.targetId).then(function(receipt){
-                console.log(receipt)
-                window.location.reload()
+            MyWeb3.attack(this.state.myZombieId,this.state.targetId)
+            .then(function(transactionHash){
+                that.setState({
+                    transactionHash:transactionHash,
+                    AttackBtn : () =>{
+                    return(<div></div>)
+                    }
+                })
             })
         }
     }
     render() { 
+        let AttackBtn = this.state.AttackBtn
         if(this.state.myZombies.length>0) {
             return ( 
                 <div className="App zombie-attack">
@@ -102,17 +126,12 @@ class NewZombie extends Component {
                             <ZombiePreview zombie={this.state.myZombie}></ZombiePreview>
                         </div>
                     </div>
-
+                    <div><h2>{this.state.transactionHash}</h2></div>
                 </div>
-                    <div  className="row zombie-parts-bin-component" authenticated="true" lesson="1" lessonidx="1">
+                    <div  className="row zombie-parts-bin-component" >
                         <div  className="game-card home-card target-card" >
                             <div className="zombie-char">
                                 <ZombiePreview zombie={this.state.targetZombie}></ZombiePreview>
-                                <div className="hide">
-                                    <div className="card-header bg-dark hide-overflow-text">
-                                        <strong ></strong></div>
-                                    <small className="hide-overflow-text">CryptoZombie第一级</small>
-                                </div>
                             </div>
                         </div>
                         <div className="zombie-detail">
@@ -135,11 +154,7 @@ class NewZombie extends Component {
                                     )
                                 })}
                             </div>
-                            <button className="attack-btn" onClick={this.zombieAttack}>
-                                <span>
-                                    {this.state.buttonTxt}干它！
-                                </span>
-                            </button>
+                            <AttackBtn></AttackBtn>
                         </div>
                     </div>
                 </div>

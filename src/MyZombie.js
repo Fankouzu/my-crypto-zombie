@@ -50,11 +50,10 @@ class MyZombie extends Component {
         let _name = this.state.zombieName
         MyWeb3.createZombie(_name).then(function(transactionHash){
             that.setState({
-                transactionHash:transactionHash.transactionHash,
+                transactionHash:transactionHash,
                 createAreaDisp:0,
                 txHashDisp:1
             })
-            //console.log(result)
         })
     }
     buyZombie(){
@@ -62,7 +61,7 @@ class MyZombie extends Component {
         let _name = this.state.zombieName
         MyWeb3.buyZombie(_name).then(function(transactionHash){
             that.setState({
-                transactionHash:transactionHash.transactionHash,
+                transactionHash:transactionHash,
                 buyAreaDisp:0,
                 txHashDisp:1
             })

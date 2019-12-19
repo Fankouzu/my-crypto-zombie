@@ -86,9 +86,8 @@ const MyWeb3 ={
     createZombie(_name){
         return new Promise((resolve, reject) => {
             window.MyContract.methods.createZombie(_name).send({from:window.defaultAccount})
-            .on('transactionHash', function(hash){
-                console.log({transactionHash:hash})
-                resolve({transactionHash:hash})
+            .on('transactionHash', function(transactionHash){
+                resolve(transactionHash)
             })
             .on('confirmation', function(confirmationNumber, receipt){
                 console.log({confirmationNumber:confirmationNumber,receipt:receipt})
@@ -101,19 +100,14 @@ const MyWeb3 ={
                 console.log({error:error,receipt:receipt})
                 reject({error:error,receipt:receipt})
             })
-            // .then(function(receipt){
-            //     //console.log({receipt:receipt})
-            //     resolve(receipt)
-            // })
         })
     },
     buyZombie(_name){
         return new Promise((resolve, reject) => {
             window.MyContract.methods.zombiePrice().call().then(function(zombiePrice) {
                 window.MyContract.methods.buyZombie(_name).send({from:window.defaultAccount,value:zombiePrice})
-                .on('transactionHash', function(hash){
-                    console.log({transactionHash:hash})
-                    resolve({transactionHash:hash})
+                .on('transactionHash', function(transactionHash){
+                    resolve(transactionHash)
                 })
                 .on('confirmation', function(confirmationNumber, receipt){
                     console.log({confirmationNumber:confirmationNumber,receipt:receipt})
@@ -126,37 +120,63 @@ const MyWeb3 ={
                     console.log({error:error,receipt:receipt})
                     reject({error:error,receipt:receipt})
                 })
-                // .then(function(receipt){
-                //     //console.log({receipt:receipt})
-                //     resolve(receipt)
-                // })
             })
         })
     },
     attack(_zombieId,_targetId){
         return new Promise((resolve, reject) => {
             window.MyContract.methods.attack(_zombieId,_targetId).send({from:window.defaultAccount})
-            .then(function(receipt){
-                //console.log({receipt:receipt})
-                resolve(receipt)
+            .on('transactionHash', function(transactionHash){
+                resolve(transactionHash)
+            })
+            .on('confirmation', function(confirmationNumber, receipt){
+                console.log({confirmationNumber:confirmationNumber,receipt:receipt})
+            })
+            .on('receipt', function(receipt){
+                console.log({receipt:receipt})
+                window.location.reload()
+            })
+            .on('error', function(error,receipt){
+                console.log({error:error,receipt:receipt})
+                reject({error:error,receipt:receipt})
             })
         })
     },
     changeName(_zombieId,_name){
         return new Promise((resolve, reject) => {
             window.MyContract.methods.changeName(_zombieId,_name).send({from:window.defaultAccount})
-            .then(function(receipt){
-                //console.log({receipt:receipt})
-                resolve(receipt)
+            .on('transactionHash', function(transactionHash){
+                resolve(transactionHash)
+            })
+            .on('confirmation', function(confirmationNumber, receipt){
+                console.log({confirmationNumber:confirmationNumber,receipt:receipt})
+            })
+            .on('receipt', function(receipt){
+                console.log({receipt:receipt})
+                window.location.reload()
+            })
+            .on('error', function(error,receipt){
+                console.log({error:error,receipt:receipt})
+                reject({error:error,receipt:receipt})
             })
         })
     },
     feed(_zombieId){
         return new Promise((resolve, reject) => {
             window.MyContract.methods.feed(_zombieId).send({from:window.defaultAccount})
-            .then(function(receipt){
-                //console.log({receipt:receipt})
-                resolve(receipt)
+            .on('transactionHash', function(transactionHash){
+                resolve(transactionHash)
+            })
+            .on('confirmation', function(confirmationNumber, receipt){
+                console.log({confirmationNumber:confirmationNumber,receipt:receipt})
+            })
+            .on('receipt', function(receipt){
+                console.log({receipt:receipt})
+                window.location.reload()
+            })
+            .on('error', function(error,receipt){
+                console.log({error:error,receipt:receipt})
+                reject({error:error,receipt:receipt})
             })
         })
     },
@@ -164,9 +184,19 @@ const MyWeb3 ={
         return new Promise((resolve, reject) => {
             window.MyContract.methods.levelUpFee().call().then(function(levelUpFee) {
                 window.MyContract.methods.levelUp(_zombieId).send({from:window.defaultAccount,value:levelUpFee})
-                .then(function(receipt){
-                    //console.log({receipt:receipt})
-                    resolve(receipt)
+                .on('transactionHash', function(transactionHash){
+                    resolve(transactionHash)
+                })
+                .on('confirmation', function(confirmationNumber, receipt){
+                    console.log({confirmationNumber:confirmationNumber,receipt:receipt})
+                })
+                .on('receipt', function(receipt){
+                    console.log({receipt:receipt})
+                    window.location.reload()
+                })
+                .on('error', function(error,receipt){
+                    console.log({error:error,receipt:receipt})
+                    reject({error:error,receipt:receipt})
                 })
             })
         })
@@ -195,8 +225,19 @@ const MyWeb3 ={
     saleMyZombie(_zombieId,_price){
         return new Promise((resolve, reject) => {
             window.MyContract.methods.saleMyZombie(_zombieId,window.web3.utils.toWei(_price.toString())).send({from:window.defaultAccount})
-            .then(function(result) {
-                resolve(result)
+            .on('transactionHash', function(transactionHash){
+                resolve(transactionHash)
+            })
+            .on('confirmation', function(confirmationNumber, receipt){
+                console.log({confirmationNumber:confirmationNumber,receipt:receipt})
+            })
+            .on('receipt', function(receipt){
+                console.log({receipt:receipt})
+                window.location.reload()
+            })
+            .on('error', function(error,receipt){
+                console.log({error:error,receipt:receipt})
+                reject({error:error,receipt:receipt})
             })
         })
     },
@@ -218,8 +259,19 @@ const MyWeb3 ={
     buyShopZombie(_zombieId,_price){
         return new Promise((resolve, reject) => {
             window.MyContract.methods.buyShopZombie(_zombieId).send({from:window.defaultAccount,value:window.web3.utils.toWei(_price.toString())})
-            .then(function(result) {
-                resolve(result)
+            .on('transactionHash', function(transactionHash){
+                resolve(transactionHash)
+            })
+            .on('confirmation', function(confirmationNumber, receipt){
+                console.log({confirmationNumber:confirmationNumber,receipt:receipt})
+            })
+            .on('receipt', function(receipt){
+                console.log({receipt:receipt})
+                window.location.reload()
+            })
+            .on('error', function(error,receipt){
+                console.log({error:error,receipt:receipt})
+                reject({error:error,receipt:receipt})
             })
         })
     },
