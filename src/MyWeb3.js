@@ -1,7 +1,56 @@
 import Web3 from "web3";
 import abi from './ZombieCore.json'
+import ContractAddress from './ContractAddress'
 
 const MyWeb3 ={
+    init() {
+        /*
+        '1': Ethereum Main Network
+        '2': Morden Test network
+        '3': Ropsten Test Network
+        '4': Rinkeby Test Network
+        '5': Goerli Test Network
+        '42': Kovan Test Network
+        */
+        return new Promise((resolve, reject) => {
+            //let currentChainId = parseInt(window.ethereum.chainId, 16)
+            let currentChainId = window.ethereum.networkVersion
+            let ethereum = window.ethereum
+            ethereum.autoRefreshOnNetworkChange = false
+            let that = this
+            ethereum.enable().then(function (accounts) {
+                let provider = window['ethereum'] || window.web3.currentProvider
+                window.web3 = new Web3(provider)
+                window.web3.currentProvider.setMaxListeners(300)
+                let currentContractAddress = ContractAddress[currentChainId]
+                if(currentContractAddress !== undefined){
+                    window.MyContract = new window.web3.eth.Contract(abi.abi,currentContractAddress)
+                    window.defaultAccount = accounts[0].toLowerCase()
+                    //that.allEvents(window.MyContract)
+                    resolve(true)
+                }else{
+                    reject('Unknow Your ChainId:'+currentChainId)
+                }
+            }).catch(function (error) {
+                console.log(error)
+            })
+            ethereum.on('accountsChanged', function (accounts) {
+                console.log("accountsChanged:"+accounts)
+                window.location.reload()
+                that.init()
+            })
+            ethereum.on('chainChanged', function (chainId) {
+                console.log("chainChanged:"+chainId)
+                window.location.reload()
+                that.init()
+            })
+            ethereum.on('networkChanged', function (networkVersion) {
+                console.log("networkChanged:"+networkVersion)
+                window.location.reload()
+                that.init()
+            })
+        })
+    },
     zombieCount() {
         return new Promise((resolve, reject) => {
             window.MyContract.methods.zombieCount().call().then(function(zombieCount) {
@@ -300,61 +349,6 @@ const MyWeb3 ={
             console.log({event_changed:event})
         }).on('error', function(error, receipt) { 
             console.log({event_error:error,receipt:receipt})
-        })
-    },
-    init() {
-        /*
-        '1': Ethereum Main Network
-        '2': Morden Test network
-        '3': Ropsten Test Network
-        '4': Rinkeby Test Network
-        '5': Goerli Test Network
-        '42': Kovan Test Network
-        */
-        return new Promise((resolve, reject) => {
-            //let currentChainId = parseInt(window.ethereum.chainId, 16)
-            let currentChainId = window.ethereum.networkVersion
-            let ethereum = window.ethereum
-            let contractAddress = {
-                3:'0x1a3cA7AbE6370D33986b2D2aC6F1F9A656f87b4D',
-                4:'0xbca6885699Ee9ae9B2255538B5a3EfB3082bE5ac',
-                5:'0x6817c8475Ad33Aa86422160C3d1C673c453A76dE',
-                42:'0x6817c8475Ad33Aa86422160C3d1C673c453A76dE',
-                5777:'0x8b11Af05bdBB4848b59f2C3A5Bf3E2BB24c744fD',
-            }
-            ethereum.autoRefreshOnNetworkChange = false
-            let that = this
-            ethereum.enable().then(function (accounts) {
-                let provider = window['ethereum'] || window.web3.currentProvider
-                window.web3 = new Web3(provider)
-                window.web3.currentProvider.setMaxListeners(300)
-                let currentContractAddress = contractAddress[currentChainId]
-                if(currentContractAddress !== undefined){
-                    window.MyContract = new window.web3.eth.Contract(abi.abi,currentContractAddress)
-                    window.defaultAccount = accounts[0].toLowerCase()
-                    //that.allEvents(window.MyContract)
-                    resolve(true)
-                }else{
-                    reject('Unknow Your ChainId:'+currentChainId)
-                }
-            }).catch(function (error) {
-                console.log(error)
-            })
-            ethereum.on('accountsChanged', function (accounts) {
-                console.log("accountsChanged:"+accounts)
-                window.location.reload()
-                that.init()
-            })
-            ethereum.on('chainChanged', function (chainId) {
-                console.log("chainChanged:"+chainId)
-                window.location.reload()
-                that.init()
-            })
-            ethereum.on('networkChanged', function (networkVersion) {
-                console.log("networkChanged:"+networkVersion)
-                window.location.reload()
-                that.init()
-            })
         })
     }
 }
