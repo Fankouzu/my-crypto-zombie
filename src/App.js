@@ -35,7 +35,7 @@ class App extends Component {
                                 return(
                                     <li>
                                         <button className="start-admin-btn">
-                                            <span><Link to="/ContractAdmin">合约管理</Link></span>
+                                            <span><Link to="ContractAdmin">合约管理</Link></span>
                                         </button>
                                     </li>
                                 )
@@ -66,17 +66,17 @@ class App extends Component {
                                     </li>
                                     <li>
                                         <button className="start-course-btn">
-                                            <span><Link to="/MyZombie">我的僵尸</Link></span>
+                                            <span><Link to="MyZombie">我的僵尸</Link></span>
                                         </button>
                                     </li>
                                     <li>
                                         <button className="start-course-btn">
-                                            <span><Link to="/ZombieMarket">僵尸市场</Link></span>
+                                            <span><Link to="ZombieMarket">僵尸市场</Link></span>
                                         </button>
                                     </li>
                                     <li>
                                         <button className="start-course-btn">
-                                            <span><Link to="/ZombieSimulator">基因模拟</Link></span>
+                                            <span><Link to="ZombieSimulator">基因模拟</Link></span>
                                         </button>
                                     </li>
                                     <AdminArea></AdminArea>
@@ -87,19 +87,19 @@ class App extends Component {
                     <section className="zombie-container block bg-walls no-webp">
                         <div className="container">
                             <div className="area">
+                                <Route path="*MyZombie" component={MyZombie}></Route>
+                                <Route path="*ZombieMarket" component={ZombieMarket}></Route>
+                                <Route path="*ZombieSimulator" component={ZombieSimulator}></Route>
+                                <Route path="*ZombieDetail" component={ZombieDetail}></Route>
+                                <Route path="*ZombieAttack" component={ZombieAttack}></Route>
+                                <Route path="*ContractAdmin" component={ContractAdmin}></Route>
                                 <Route exact path="/" component={ZombieArmy}></Route>
-                                <Route path="/MyZombie" component={MyZombie}></Route>
-                                <Route path="/ZombieMarket" component={ZombieMarket}></Route>
-                                <Route path="/ZombieSimulator" component={ZombieSimulator}></Route>
-                                <Route path="/ZombieDetail" component={ZombieDetail}></Route>
-                                <Route path="/ZombieAttack" component={ZombieAttack}></Route>
-                                <Route path="/ContractAdmin" component={ContractAdmin}></Route>
                             </div>
                         </div>
                     </section>
                 </Router>
             </Fragment>
-            );
+        );
     }
 }
 
