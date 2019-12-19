@@ -1,5 +1,5 @@
 # 区块链收藏游戏：僵尸之谜
-[![](https://api.travis-ci.org/Fankouzu/my-crypto-zombie.svg?branch=master)](https://github.com/Fankouzu/my-crypto-zombie)
+[![build passing](https://api.travis-ci.org/Fankouzu/my-crypto-zombie.svg?branch=master)](https://github.com/Fankouzu/my-crypto-zombie)
 ## Demo
 https://fankouzu.github.io/my-crypto-zombie/ <br />
 `需要使用Chrome浏览器和Metamask钱包插件`
