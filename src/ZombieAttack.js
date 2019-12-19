@@ -7,7 +7,7 @@ import moment from "moment"
 class NewZombie extends Component {
     constructor(props) {
         super(props);
-        const searchParams = new URLSearchParams(this.props.location.search)
+        const searchParams = new URLSearchParams(window.location.search)
         const id = searchParams.get('id')   
         this.state = {
             targetId:id ,

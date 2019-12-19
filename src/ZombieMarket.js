@@ -6,7 +6,7 @@ import {
     Route,
     Link
   } from "react-router-dom"
-import ZombieDetail from "./ZombieDetail";
+import Page from "./Page";
 
 class ZombieMarket extends Component {
     constructor(props) {
@@ -54,12 +54,12 @@ class ZombieMarket extends Component {
                         var name = item.name
                         var level = item.level
                         return(
-                            <Link to={{pathname:"./ZombieDetail",search:"?id="+item.zombieId}} key={index}>
+                            <Link to={`?ZombieDetail&id=`+item.zombieId} key={index}>
                                 <ZombieCard zombie={item} name={name} level={level} key={index}></ZombieCard>
                             </Link>
                         )
                     })}
-                    <Route path="/ZombieDetail" component={ZombieDetail}></Route>
+                    <Route path="*" component={Page}></Route>
                 </div> 
             )
         }else{

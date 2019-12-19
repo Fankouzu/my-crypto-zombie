@@ -5,18 +5,23 @@ import  ZombieMarket  from "./ZombieMarket"
 import  ZombieSimulator  from "./ZombieSimulator"
 import ZombieDetail from "./ZombieDetail";
 import ZombieAttack from "./ZombieAttack";
-import ContractAdmin from "./ContractAdmin";
+import ContractAdmin from "./ContractAdmin"
 
 class Page extends Component {
     constructor(props) {
         super(props)
-        this.state = {page:'ZombieArmy' }
+        this.state = {page:'',id:0 }
+    }
+    componentDidMount(){
+        let search = this.props.location.search.replace(/\?/,'').split("&")
+        let page = search[0]
+        this.setState({page:page})
     }
     UNSAFE_componentWillReceiveProps(nextProps){
         if(nextProps!==this.props){
             this.setState({nextProps})
-            let search = nextProps.location.search.replace(/\?/,'')
-            let page = search === '' ?  'ZombieArmy' : search
+            let search = nextProps.location.search.replace(/\?/,'').split("&")
+            let page = search[0] === '' ?  'ZombieArmy' : search[0]
             this.setState({page:page})
             return true
         }else{

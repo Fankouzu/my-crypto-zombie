@@ -8,12 +8,12 @@ import {
     Route,
     Link
   } from "react-router-dom"
-  import ZombieAttack from "./ZombieAttack";
+  import Page from "./Page";
 
 class Zombiedetail extends Component {
     constructor(props) {
-        super(props);
-        const searchParams = new URLSearchParams(this.props.location.search)
+        super(props)
+        const searchParams = new URLSearchParams(window.location.search)
         
         const id = searchParams.get('id')   
         this.state = {
@@ -148,7 +148,7 @@ class Zombiedetail extends Component {
                         return(
                         <button className="attack-btn">
                             <span>
-                                <Link to={{pathname:"./ZombieAttack",search:"?id="+that.state.id}} >发起挑战</Link>
+                                <Link to={`?ZombieAttack&id=`+that.state.id} >发起挑战</Link>
                             </span>
                         </button>)
                         }
@@ -303,7 +303,7 @@ class Zombiedetail extends Component {
                             </dd>
                         </dl>
                     </div>
-                    <Route path="/ZombieAttack" component={ZombieAttack}></Route>
+                    <Route path="*" component={Page}></Route>
                 </div>
             </div>
         );
