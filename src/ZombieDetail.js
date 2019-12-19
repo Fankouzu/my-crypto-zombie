@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ZombiePreview from "./ZombiePreview"
-import '../public/ZombiePreview.css'
+import './static/ZombiePreview.css'
 import MyWeb3 from './MyWeb3'
 import moment from "moment"
 import {

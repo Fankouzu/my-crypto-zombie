@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MyWeb3 from './MyWeb3'
 import ZombiePreview from "./ZombiePreview"
-import '../public/ZombiePreview.css'
+import './static/ZombiePreview.css'
 import moment from "moment"
 
 class NewZombie extends Component {

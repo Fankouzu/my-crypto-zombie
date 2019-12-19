@@ -1,5 +1,5 @@
 import React,{Component,Fragment} from 'react'
-import '../public/App.css'
+import './static/App.css'
 import Page from "./Page";
 import MyWeb3 from './MyWeb3'
 import {

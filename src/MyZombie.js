@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ZombieCard from "./ZombieCard"
-import '../public/ZombiePreview.css'
+import './static/ZombiePreview.css'
 import Page from "./Page"
 import MyWeb3 from './MyWeb3'
 import {

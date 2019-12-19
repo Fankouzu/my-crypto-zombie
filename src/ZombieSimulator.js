@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import '../public/ZombiePreview.css';
+import './static/ZombiePreview.css';
 import  ZombiePreview  from "./ZombiePreview";
 import  ZombieToggler  from "./ZombieToggler";
 
