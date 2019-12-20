@@ -16,22 +16,54 @@ const MyWeb3 ={
             //let currentChainId = parseInt(window.ethereum.chainId, 16)
             let ethereum = window.ethereum
             ethereum.autoRefreshOnNetworkChange = false
+            window.addEventListener('load', async () => {
+                if (window.ethereum) {
+                    window.web3 = new Web3(ethereum);
+                    try {
+                        await ethereum.enable().then(function (accounts) {
+                            window.web3.eth.net.getId().then(function (result) {
+                                let currentChainId = result
+                                let currentContractAddress = ContractAddress[currentChainId]
+                                if(currentContractAddress !== undefined){
+                                    window.MyContract = new window.web3.eth.Contract(abi.abi,currentContractAddress)
+                                    window.defaultAccount = accounts[0].toLowerCase()
+                                    resolve(accounts)
+                                }else{
+                                    reject('Unknow Your ChainId:'+currentChainId)
+                                }
+                            })
+                        })
+                    } catch (error) {
+                        reject('Non-Ethereum browser detected. You should consider trying MetaMask!');
+                    }
+                }
+                else if (window.web3) {
+                    window.web3 = new Web3(window.web3.currentProvider);
+                    window.web3.eth.net.getId().then(function (result) {
+                        let currentChainId = result
+                        let currentContractAddress = ContractAddress[currentChainId]
+                        if(currentContractAddress !== undefined){
+                            window.MyContract = new window.web3.eth.Contract(abi.abi,currentContractAddress)
+                            console.log(window.web3.eth)
+                            // window.defaultAccount = accounts[0].toLowerCase()
+                            // resolve(accounts)
+                        }else{
+                            reject('Unknow Your ChainId:'+currentChainId)
+                        }
+                    })
+                }
+                else {
+                    reject('Non-Ethereum browser detected. You should consider trying MetaMask!');
+                }
+            });
+
+
+
+
             ethereum.enable().then(function (accounts) {
                 let provider = window['ethereum'] || window.web3.currentProvider
                 window.web3 = new Web3(provider)
-                window.web3.eth.net.getId().then(function (result) {
-                    let currentChainId = window.ethereum.networkVersion
-                    window.web3.currentProvider.setMaxListeners(300)
-                    let currentContractAddress = ContractAddress[currentChainId]
-                    if(currentContractAddress !== undefined){
-                        window.MyContract = new window.web3.eth.Contract(abi.abi,currentContractAddress)
-                        window.defaultAccount = accounts[0].toLowerCase()
-                        //that.allEvents(window.MyContract)
-                        resolve(true)
-                    }else{
-                        reject('Unknow Your ChainId:'+currentChainId)
-                    }
-                })
+                
             }).catch(function (error) {
                 console.log(error)
             })
