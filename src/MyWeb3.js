@@ -14,10 +14,10 @@ const MyWeb3 ={
         */
         return new Promise((resolve, reject) => {
             //let currentChainId = parseInt(window.ethereum.chainId, 16)
-            let ethereum = window.ethereum
-            ethereum.autoRefreshOnNetworkChange = false
             window.addEventListener('load', async () => {
                 if (window.ethereum) {
+                    let ethereum = window.ethereum
+                    ethereum.autoRefreshOnNetworkChange = false
                     window.web3 = new Web3(ethereum);
                     try {
                         await ethereum.enable().then(function (accounts) {
@@ -38,6 +38,7 @@ const MyWeb3 ={
                     }
                 }
                 else if (window.web3) {
+                    window.ethereum.autoRefreshOnNetworkChange = false
                     window.web3 = new Web3(window.web3.currentProvider);
                     window.web3.eth.net.getId().then(function (result) {
                         let currentChainId = result
@@ -45,8 +46,10 @@ const MyWeb3 ={
                         if(currentContractAddress !== undefined){
                             window.MyContract = new window.web3.eth.Contract(abi.abi,currentContractAddress)
                             console.log(window.web3.eth)
-                            // window.defaultAccount = accounts[0].toLowerCase()
-                            // resolve(accounts)
+                            window.web3.eth.getAccounts().then(function (accounts) {
+                                window.defaultAccount = accounts[0].toLowerCase()
+                                resolve(accounts)
+                            })
                         }else{
                             reject('Unknow Your ChainId:'+currentChainId)
                         }
@@ -57,16 +60,6 @@ const MyWeb3 ={
                 }
             });
 
-
-
-
-            ethereum.enable().then(function (accounts) {
-                let provider = window['ethereum'] || window.web3.currentProvider
-                window.web3 = new Web3(provider)
-                
-            }).catch(function (error) {
-                console.log(error)
-            })
         })
     },
     zombieCount() {
