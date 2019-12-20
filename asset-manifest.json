@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/my-crypto-zombie/static/css/main.8406f7ba.chunk.css",
-    "main.js": "/my-crypto-zombie/static/js/main.78ee39a3.chunk.js",
-    "main.js.map": "/my-crypto-zombie/static/js/main.78ee39a3.chunk.js.map",
+    "main.js": "/my-crypto-zombie/static/js/main.a0fc81fc.chunk.js",
+    "main.js.map": "/my-crypto-zombie/static/js/main.a0fc81fc.chunk.js.map",
     "runtime-main.js": "/my-crypto-zombie/static/js/runtime-main.3c1a62d7.js",
     "runtime-main.js.map": "/my-crypto-zombie/static/js/runtime-main.3c1a62d7.js.map",
-    "static/js/2.a7a8d271.chunk.js": "/my-crypto-zombie/static/js/2.a7a8d271.chunk.js",
-    "static/js/2.a7a8d271.chunk.js.map": "/my-crypto-zombie/static/js/2.a7a8d271.chunk.js.map",
+    "static/js/2.4591672a.chunk.js": "/my-crypto-zombie/static/js/2.4591672a.chunk.js",
+    "static/js/2.4591672a.chunk.js.map": "/my-crypto-zombie/static/js/2.4591672a.chunk.js.map",
     "index.html": "/my-crypto-zombie/index.html",
-    "precache-manifest.58d7a4df2c73ab380013a3ce2d92bfd3.js": "/my-crypto-zombie/precache-manifest.58d7a4df2c73ab380013a3ce2d92bfd3.js",
+    "precache-manifest.c514821df5059829fda966f942c55aa7.js": "/my-crypto-zombie/precache-manifest.c514821df5059829fda966f942c55aa7.js",
     "service-worker.js": "/my-crypto-zombie/service-worker.js",
     "static/css/main.8406f7ba.chunk.css.map": "/my-crypto-zombie/static/css/main.8406f7ba.chunk.css.map",
-    "static/js/2.a7a8d271.chunk.js.LICENSE": "/my-crypto-zombie/static/js/2.a7a8d271.chunk.js.LICENSE",
+    "static/js/2.4591672a.chunk.js.LICENSE": "/my-crypto-zombie/static/js/2.4591672a.chunk.js.LICENSE",
     "static/media/App.css": "/my-crypto-zombie/static/media/walls.b102b800.jpg",
     "static/media/ZombiePreview.css": "/my-crypto-zombie/static/media/zombierun.08087132.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3c1a62d7.js",
-    "static/js/2.a7a8d271.chunk.js",
+    "static/js/2.4591672a.chunk.js",
     "static/css/main.8406f7ba.chunk.css",
-    "static/js/main.78ee39a3.chunk.js"
+    "static/js/main.a0fc81fc.chunk.js"
   ]
 }
