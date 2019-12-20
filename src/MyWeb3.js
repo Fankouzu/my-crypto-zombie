@@ -14,22 +14,24 @@ const MyWeb3 ={
         */
         return new Promise((resolve, reject) => {
             //let currentChainId = parseInt(window.ethereum.chainId, 16)
-            let currentChainId = window.ethereum.networkVersion
             let ethereum = window.ethereum
             ethereum.autoRefreshOnNetworkChange = false
             ethereum.enable().then(function (accounts) {
                 let provider = window['ethereum'] || window.web3.currentProvider
                 window.web3 = new Web3(provider)
-                window.web3.currentProvider.setMaxListeners(300)
-                let currentContractAddress = ContractAddress[currentChainId]
-                if(currentContractAddress !== undefined){
-                    window.MyContract = new window.web3.eth.Contract(abi.abi,currentContractAddress)
-                    window.defaultAccount = accounts[0].toLowerCase()
-                    //that.allEvents(window.MyContract)
-                    resolve(true)
-                }else{
-                    reject('Unknow Your ChainId:'+currentChainId)
-                }
+                window.web3.eth.net.getId().then(function (result) {
+                    let currentChainId = window.ethereum.networkVersion
+                    window.web3.currentProvider.setMaxListeners(300)
+                    let currentContractAddress = ContractAddress[currentChainId]
+                    if(currentContractAddress !== undefined){
+                        window.MyContract = new window.web3.eth.Contract(abi.abi,currentContractAddress)
+                        window.defaultAccount = accounts[0].toLowerCase()
+                        //that.allEvents(window.MyContract)
+                        resolve(true)
+                    }else{
+                        reject('Unknow Your ChainId:'+currentChainId)
+                    }
+                })
             }).catch(function (error) {
                 console.log(error)
             })

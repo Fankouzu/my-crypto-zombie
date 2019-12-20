@@ -1,7 +1,6 @@
 import React,{Component,Fragment} from 'react'
 import './static/App.css'
 import Page from "./Page";
-import MyWeb3 from './MyWeb3'
 import {
     BrowserRouter as Router,
     Route,
@@ -15,26 +14,8 @@ class App extends Component {
     }
     
     componentDidMount(){
-        let that = this
         let ethereum = window.ethereum
         if (typeof  ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
-            MyWeb3.init().then(function(res){
-                MyWeb3.owner().then(function (owner) {
-                    if(window.defaultAccount === owner){
-                        that.setState({
-                            AdminArea:()=>{
-                                return(
-                                    <li>
-                                        <button className="start-admin-btn">
-                                            <span><Link to="?ContractAdmin">合约管理</Link></span>
-                                        </button>
-                                    </li>
-                                )
-                            }
-                        })
-                    }
-                })
-            })
             ethereum.on('accountsChanged', function (accounts) {
                 console.log("accountsChanged:"+accounts)
                 window.location.reload()
