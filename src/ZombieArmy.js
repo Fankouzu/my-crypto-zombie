@@ -16,10 +16,8 @@ class ZombieArmy extends Component {
     }
         
     componentDidMount(){
-        //console.log(window.web3._extend.utils)
         let that = this
         let ethereum = window.ethereum
-        console.log(ethereum)
         if (typeof ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
             MyWeb3.init().then(function(res){
                 that.zombieArmy()
